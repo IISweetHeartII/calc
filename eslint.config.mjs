@@ -1,39 +1,75 @@
+// @ts-check
+
 import { defineConfig, globalIgnores } from "eslint/config";
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 import prettier from "eslint-config-prettier";
-import prettierPlugin from "eslint-plugin-prettier";
 
 const eslintConfig = defineConfig([
+  // ESLint recommended rules
+  eslint.configs.recommended,
+
+  // TypeScript ESLint recommended rules
+  ...tseslint.configs.recommended,
+
+  // Next.js specific rules
   ...nextVitals,
   ...nextTs,
+
+  // Prettier integration (disables conflicting rules)
   prettier,
+
+  // Custom rules
   {
-    plugins: {
-      prettier: prettierPlugin,
-    },
     rules: {
-      "prettier/prettier": "warn",
+      // TypeScript specific
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {
           argsIgnorePattern: "^_",
           varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
         },
       ],
-      "react/no-unescaped-entities": "off",
       "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/consistent-type-imports": [
+        "warn",
+        {
+          prefer: "type-imports",
+          fixStyle: "inline-type-imports",
+        },
+      ],
+
+      // React specific
+      "react/no-unescaped-entities": "off",
+      "react/jsx-curly-brace-presence": [
+        "warn",
+        {
+          props: "never",
+          children: "never",
+        },
+      ],
+
+      // General best practices
+      "prefer-const": "warn",
+      "no-console": ["warn", { allow: ["warn", "error"] }],
     },
   },
-  // Override default ignores of eslint-config-next.
+
+  // Global ignores
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",
+    "dist/**",
     "next-env.d.ts",
     "node_modules/**",
     "pnpm-lock.yaml",
+    "*.config.js",
+    "*.config.mjs",
+    "*.config.ts",
   ]),
 ]);
 

@@ -26,6 +26,7 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -33,12 +34,12 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.4",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "typescript-eslint": "^8.47.0"
   }
 }
