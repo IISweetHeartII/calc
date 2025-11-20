@@ -48,15 +48,16 @@ pnpm typecheck     # Run TypeScript type check
 
 ```
 clac/
-├── app/              # Next.js app router pages
-├── components/       # React components
-│   └── ui/          # Reusable UI components
-├── lib/             # Utility functions
-├── types/           # TypeScript type definitions
-├── constants/       # Global constants
-├── public/          # Static assets
+├── src/
+│   ├── app/         # Next.js app router pages
+│   ├── components/  # React components
+│   │   └── ui/     # Reusable UI components
+│   ├── lib/        # Utility functions
+│   ├── types/      # TypeScript type definitions
+│   └── constants/  # Global constants
+├── public/         # Static assets
 └── .github/
-    └── workflows/   # GitHub Actions CI/CD
+    └── workflows/  # GitHub Actions CI/CD
 ```
 
 ## Development Workflow
