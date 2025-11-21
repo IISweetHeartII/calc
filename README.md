@@ -4,11 +4,23 @@
 
 ## Tech Stack
 
+### Core
+
 - **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript 5
 - **Styling:** Tailwind CSS 4
 - **Package Manager:** pnpm 10
-- **Code Quality:** ESLint 9 + Prettier 3
+
+### Libraries
+
+- **State Management:** Zustand 5 (with persist middleware)
+- **Icons:** Lucide React
+- **Animations:** Framer Motion 12
+
+### Code Quality
+
+- **Linter:** ESLint 9 + TypeScript ESLint
+- **Formatter:** Prettier 3
 - **Git Hooks:** Husky 9 + lint-staged
 - **CI/CD:** GitHub Actions
 
@@ -52,9 +64,16 @@ clac/
 │   ├── app/         # Next.js app router pages
 │   ├── components/  # React components
 │   │   └── ui/     # Reusable UI components
+│   ├── stores/     # Zustand state management
 │   ├── lib/        # Utility functions
 │   ├── types/      # TypeScript type definitions
 │   └── constants/  # Global constants
+├── docs/           # Documentation
+│   ├── ARCHITECTURE.md
+│   ├── DEVELOPMENT.md
+│   ├── DEPLOYMENT.md
+│   ├── CONTRIBUTING.md
+│   └── LIBRARIES.md  # Library usage guide
 ├── public/         # Static assets
 └── .github/
     └── workflows/  # GitHub Actions CI/CD

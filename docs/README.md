@@ -45,6 +45,15 @@
 - Style Guide
 - Documentation
 
+### [LIBRARIES.md](./LIBRARIES.md)
+
+라이브러리 사용 가이드
+
+- Zustand (State Management)
+- Lucide React (Icons)
+- Framer Motion (Animations)
+- Best Practices & Examples
+
 ## Quick Links
 
 ### For Developers
@@ -67,10 +76,21 @@
 
 ## External Resources
 
+### Framework & Core
+
 - [Next.js Docs](https://nextjs.org/docs)
 - [React Docs](https://react.dev)
 - [TypeScript Docs](https://www.typescriptlang.org/docs)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
+
+### Libraries
+
+- [Zustand Docs](https://zustand.docs.pmnd.rs/)
+- [Lucide React](https://lucide.dev/)
+- [Framer Motion](https://www.framer.com/motion/)
+
+### Deployment
+
 - [Vercel Docs](https://vercel.com/docs)
 
 ## Project Goals
