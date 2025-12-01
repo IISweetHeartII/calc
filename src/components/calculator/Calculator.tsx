@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Calculator as CalculatorIcon, TrendingUp, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AssetSearch } from "./AssetSearch";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -63,6 +64,10 @@ export function Calculator() {
     setError("");
   };
 
+  const handleCoinSelect = (price: number) => {
+    setCurrentPrice(price);
+  };
+
   return (
     <div className="mx-auto w-full max-w-4xl space-y-6">
       {/* Header */}
@@ -80,16 +85,24 @@ export function Calculator() {
 
       {/* Calculator Card */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.1 }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
       >
         <Card>
           <CardHeader>
-            <CardTitle>물타기 계산</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <CalculatorIcon className="text-primary h-5 w-5" />
+              물타기 계산
+            </CardTitle>
             <CardDescription>현재 보유 수량과 추가 매수 정보를 입력하세요</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label>자산 검색 (선택)</Label>
+              <AssetSearch onSelect={handleCoinSelect} />
+            </div>
+
             {/* Current Holdings */}
             <div className="space-y-4">
               <h3 className="text-muted-foreground text-sm font-semibold">현재 보유</h3>

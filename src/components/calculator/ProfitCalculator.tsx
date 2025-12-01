@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { formatCurrency, formatPercentage } from "@/lib/calculator";
+import { AssetSearch } from "./AssetSearch";
 
 export function ProfitCalculator() {
   const [buyPrice, setBuyPrice] = useState<string>("");
@@ -36,6 +37,10 @@ export function ProfitCalculator() {
     setQuantity("");
   };
 
+  const handleCoinSelect = (price: number) => {
+    setBuyPrice(price.toString());
+  };
+
   return (
     <div className="grid gap-6 md:grid-cols-2">
       <motion.div
@@ -51,6 +56,11 @@ export function ProfitCalculator() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label>자산 검색 (선택)</Label>
+              <AssetSearch onSelect={handleCoinSelect} />
+            </div>
+
             <div className="space-y-2">
               <Label htmlFor="buyPrice">매수 가격</Label>
               <div className="relative">
