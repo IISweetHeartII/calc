@@ -52,9 +52,7 @@ export function CalculationHistory() {
         <div className="space-y-3">
           <AnimatePresence mode="popLayout">
             {history.map((item, index) => {
-              const isProfitable =
-                item.result.averagePrice < item.currentPrice ||
-                item.result.averagePrice < item.additionalPrice;
+              const isProfitable = item.currentPrice >= item.result.averagePrice;
 
               return (
                 <motion.div
@@ -70,9 +68,9 @@ export function CalculationHistory() {
                     <div className="flex-1 space-y-2">
                       <div className="flex items-center gap-2">
                         {isProfitable ? (
-                          <TrendingDown className="size-4 text-green-600" />
+                          <TrendingUp className="size-4 text-green-600" />
                         ) : (
-                          <TrendingUp className="size-4 text-red-600" />
+                          <TrendingDown className="size-4 text-red-600" />
                         )}
                         <span className="text-muted-foreground text-xs">
                           {new Date(item.timestamp).toLocaleString("ko-KR", {
