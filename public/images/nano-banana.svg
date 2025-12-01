@@ -1,0 +1,48 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0F2FE"/>
+      <stop offset="1" stop-color="#BAE6FD"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="512" height="512" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="4"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="128" fill="url(#skyGradient)"/>
+  
+  <!-- Rocket Banana -->
+  <g filter="url(#shadow)" transform="translate(0, -20)">
+    <!-- Banana Body -->
+    <path d="M256 100C256 100 320 120 350 200C380 280 360 380 256 420C152 380 132 280 162 200C192 120 256 100 256 100Z" fill="#FFD700" stroke="#B45309" stroke-width="8"/>
+    
+    <!-- Highlights -->
+    <path d="M256 100C256 100 300 130 320 200" stroke="#FEF08A" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- Window/Face -->
+    <circle cx="256" cy="220" r="40" fill="#E0F2FE" stroke="#38BDF8" stroke-width="6"/>
+    <circle cx="245" cy="215" r="5" fill="#0F172A"/>
+    <circle cx="267" cy="215" r="5" fill="#0F172A"/>
+    <path d="M250 235Q256 240 262 235" stroke="#0F172A" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Fins -->
+    <path d="M162 350L120 400L170 390" fill="#EF4444" stroke="#991B1B" stroke-width="4"/>
+    <path d="M350 350L392 400L342 390" fill="#EF4444" stroke="#991B1B" stroke-width="4"/>
+    
+    <!-- Flame -->
+    <path d="M230 420L256 480L282 420" fill="#F97316"/>
+    <path d="M245 420L256 460L267 420" fill="#FDE047"/>
+  </g>
+  
+  <!-- Speed Lines -->
+  <path d="M100 150L100 250" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" stroke-dasharray="20 20"/>
+  <path d="M412 200L412 300" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" stroke-dasharray="20 20"/>
+</svg>

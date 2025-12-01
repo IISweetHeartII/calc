@@ -3,16 +3,16 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Using useSyncExternalStore pattern for hydration safety
-  if (typeof window !== "undefined" && !mounted) {
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
-  }
+  }, []);
 
   if (!mounted) {
     return (

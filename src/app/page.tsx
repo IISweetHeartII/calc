@@ -2,10 +2,11 @@
 
 import { Calculator } from "@/components/calculator/Calculator";
 import { TargetAverageCalculator } from "@/components/calculator/TargetAverageCalculator";
+import { ProfitCalculator } from "@/components/calculator/ProfitCalculator";
 import { CalculationHistory } from "@/components/calculator/CalculationHistory";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { TrendingDown, Target, History } from "lucide-react";
+import { TrendingDown, Target, History, TrendingUp } from "lucide-react";
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
         </div>
 
         <Tabs defaultValue="averaging-down" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="averaging-down" className="gap-2">
               <TrendingDown className="size-4" />
               <span className="hidden sm:inline">물타기 계산</span>
@@ -41,6 +42,11 @@ export default function Home() {
               <Target className="size-4" />
               <span className="hidden sm:inline">목표 평단가</span>
               <span className="sm:hidden">평단가</span>
+            </TabsTrigger>
+            <TabsTrigger value="profit" className="gap-2">
+              <TrendingUp className="size-4" />
+              <span className="hidden sm:inline">수익률 계산</span>
+              <span className="sm:hidden">수익률</span>
             </TabsTrigger>
             <TabsTrigger value="history" className="gap-2">
               <History className="size-4" />
@@ -55,6 +61,10 @@ export default function Home() {
 
           <TabsContent value="target-average" className="space-y-6">
             <TargetAverageCalculator />
+          </TabsContent>
+
+          <TabsContent value="profit" className="space-y-6">
+            <ProfitCalculator />
           </TabsContent>
 
           <TabsContent value="history" className="space-y-6">

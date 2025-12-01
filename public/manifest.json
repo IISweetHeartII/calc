@@ -1,0 +1,16 @@
+{
+  "name": "탈출각 - 투자 계산기",
+  "short_name": "탈출각",
+  "description": "물타기 계산, 목표 평단가 역산 등 투자자를 위한 유틸리티",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/images/nano-banana.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
