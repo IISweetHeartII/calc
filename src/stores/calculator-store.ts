@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
+import { HISTORY_MAX_ITEMS } from "@/constants";
 
 /**
  * Calculator calculation history item
@@ -64,7 +65,7 @@ export const useCalculatorStore = create<CalculatorState>()(
 
       addToHistory: (item) =>
         set((state) => ({
-          history: [item, ...state.history].slice(0, 10), // Keep last 10 items
+          history: [item, ...state.history].slice(0, HISTORY_MAX_ITEMS),
         })),
 
       clearHistory: () => set({ history: [] }),

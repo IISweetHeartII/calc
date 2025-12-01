@@ -14,6 +14,7 @@ import {
   type TargetAverageResult,
 } from "@/lib/calculator";
 import { useCalculatorStore } from "@/stores/calculator-store";
+import { ANIMATION_DELAY } from "@/constants";
 
 export function TargetAverageCalculator() {
   const { currentPrice, currentQuantity, setCurrentPrice, setCurrentQuantity, reset } =
@@ -151,7 +152,7 @@ export function TargetAverageCalculator() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.1 }}
+                  transition={{ delay: ANIMATION_DELAY.MEDIUM }}
                   className="from-primary/5 to-primary/10 rounded-lg border bg-gradient-to-br p-4"
                 >
                   <div className="text-muted-foreground text-sm">필요 수량</div>
